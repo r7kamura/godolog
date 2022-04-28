@@ -1,7 +1,6 @@
 import { formatInTimeZone } from "date-fns-tz";
 
 export default function Time({ dateString }) {
-  console.log(dateString);
   const isoString = `${dateString}T00:00+0900`;
   return (
     <time dateTime={isoString}>
