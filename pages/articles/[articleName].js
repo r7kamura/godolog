@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   const paths = listArticles().map((article) => {
     return {
       params: {
-        id: article.id,
+        articleName: article.name,
       },
     };
   });
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   return {
     props: {
-      article: getArticle({ articleId: params.id }),
+      article: getArticle({ articleName: params.articleName }),
     },
   };
 }

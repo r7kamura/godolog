@@ -11,7 +11,7 @@ export default function ListArticles({ articles }) {
           {articles.map((article) => (
             <li key={article.id}>
               <Time datetime={article.createdTime} />
-              <Link href={`/articles/${article.id}`}>
+              <Link href={`/articles/${article.name}`}>
                 <a>{article.title}</a>
               </Link>
             </li>
