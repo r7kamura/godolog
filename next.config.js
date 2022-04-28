@@ -4,7 +4,6 @@ const nextConfig = {
     ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}`
     : "",
   reactStrictMode: true,
-  trailingSlash: true,
 };
 
 module.exports = nextConfig;
