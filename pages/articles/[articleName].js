@@ -8,7 +8,7 @@ export default function ShowArticle({ article }) {
       <Head>
         <title>{article.title}</title>
       </Head>
-      <Time datetime={article.createdTime} />
+      <Time dateString={article.dateString} />
       <div dangerouslySetInnerHTML={{ __html: article.body }}></div>
     </article>
   );

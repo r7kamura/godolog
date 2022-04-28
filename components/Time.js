@@ -1,9 +1,19 @@
 import { formatInTimeZone } from "date-fns-tz";
 
-export default function Time({ datetime }) {
+export default function Time({ dateString }) {
+  console.log(dateString);
+  const isoString = `${dateString}T00:00+0900`;
   return (
-    <time dateTime={datetime}>
-      {formatInTimeZone(new Date(datetime), "Asia/Tokyo", "yyyy年MM月dd日")}
+    <time dateTime={isoString}>
+      {formatInTimeZone(new Date(isoString), "Asia/Tokyo", "yyyy年MM月dd日")}
     </time>
   );
+}
+
+/**
+ * @param {string} dateString
+ * @returns {string}
+ */
+function dateStringToIsoString(dateString) {
+  return new Date(`${dateString}T00:00+0900`);
 }
