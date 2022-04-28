@@ -1,0 +1,9 @@
+.articles {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.articles li + li {
+  margin-top: 2rem;
+}
