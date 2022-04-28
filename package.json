@@ -5,10 +5,10 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "export": "next build && next export",
     "lint:next": "next lint",
     "lint:prettier": "prettier --write .",
     "lint": "npm run lint:next && npm run lint:prettier",
-    "publish": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
