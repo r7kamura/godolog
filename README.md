@@ -1,5 +1,24 @@
-# google-docs-blog-example
+# Godolog
 
-An example blog written on Google Docs.
+Blog template to use Google Docs as article editor.
 
-Demo: https://r7kamura.github.io/google-docs-blog-example/
+## Usage
+
+### Set up
+
+1. Create a new repository from Use this template button above.
+2. Set up service account and OIDC settings on Google Cloud Platform.
+3. Create a folder on Google Drive and share it with the account.
+4. Set `GOOGLE_SERVICE_ACCOUNT` and `GOOGLE_WORKLOAD_IDENTITY_PROVIDER` secrets on your GitHub repository.
+
+I prepared a simple shell script that creates the necessary GCP resources for OIDC settings by using `cloud` command. Fill in some required variables and then run this script.
+
+- https://gist.github.com/r7kamura/59b0eff812c834aa5e34143adfba6b1e
+
+### Write articles
+
+Once set up, the documents in the folder will be periodically synced as articles.
+
+Note that there is a restriction on the document file name,
+which must be in the format like "YYYY-MM-DD-slug" (e.g. "2022-05-05-foo-bar").
+This file name will be used for the article URL and the published date.
