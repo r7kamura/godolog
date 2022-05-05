@@ -6,7 +6,7 @@ Blog template to use Google Docs as article editor.
 
 ### Set up
 
-1. Create a new repository from Use this template button above.
+1. Create a new repository from [Use this template](https://github.com/r7kamura/godolog/generate) button above.
 2. Set up service account and OIDC settings on Google Cloud Platform.
 3. Create a folder on Google Drive and share it with the account.
 4. Set `GOOGLE_SERVICE_ACCOUNT` and `GOOGLE_WORKLOAD_IDENTITY_PROVIDER` secrets on your GitHub repository.
