@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getArticle, listArticles } from "../../lib/article";
+import { getArticle, listArticles, renderArticle } from "../../lib/article";
 import Time from "../../components/Time";
 
 export default function ShowArticle({ article }) {
@@ -8,8 +8,11 @@ export default function ShowArticle({ article }) {
       <Head>
         <title>{article.title}</title>
       </Head>
-      <Time dateString={article.dateString} />
-      <div dangerouslySetInnerHTML={{ __html: article.body }}></div>
+      <header>
+        <Time date={article.date} />
+        <h1>{article.title}</h1>
+      </header>
+      <div dangerouslySetInnerHTML={{ __html: article.renderedBody }}></div>
     </article>
   );
 }
@@ -29,9 +32,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const article = await renderArticle(
+    getArticle({ articleName: params.articleName })
+  );
   return {
     props: {
-      article: getArticle({ articleName: params.articleName }),
+      article,
     },
   };
 }

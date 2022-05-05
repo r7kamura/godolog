@@ -23,22 +23,71 @@ html {
 
 body {
   background-color: #f8f9fa;
-  margin: 0 auto;
+  margin: 0 auto !important; /* !important is to override `margin: 0` on default 404 page. */
   max-width: 40rem;
   word-wrap: break-word;
 }
 
-article,
-header,
-footer {
+nav {
   padding: 2rem;
 }
 
-article,
-section {
+main {
   background-color: #fff;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
+
+nav a {
+  color: inherit;
+}
+
+header nav {
+  font-weight: 700;
+}
+
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li + li {
+  display: inline-block;
+}
+
+nav li + li:before {
+  content: "//";
+  padding: 0 1rem;
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
+section ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+section li + li {
+  margin-top: 2rem;
+}
+
+time {
+  color: var(--color-light);
+  display: block;
+  font-size: 0.8rem;
+}
+
+/* The followings are mainly for article. */
 
 h1 {
   font-size: 1.5rem;
@@ -111,40 +160,4 @@ blockquote {
   font-style: italic;
   margin: 1rem 0;
   padding-left: 1rem;
-}
-
-time {
-  color: var(--color-light);
-  display: block;
-  font-size: 0.8rem;
-}
-
-nav a {
-  color: inherit;
-}
-
-header {
-  font-weight: 700;
-}
-
-footer {
-  font-size: 0.8rem;
-}
-
-footer ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-footer li {
-  display: inline-block;
-}
-
-footer li + li {
-  display: inline-block;
-}
-
-footer li + li:before {
-  content: "//";
-  padding: 0 1rem;
 }

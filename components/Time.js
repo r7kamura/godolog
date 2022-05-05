@@ -1,7 +1,7 @@
 import { formatInTimeZone } from "date-fns-tz";
 
-export default function Time({ dateString }) {
-  const isoString = `${dateString}T00:00+0900`;
+export default function Time({ date }) {
+  const isoString = `${date}T00:00+0900`;
   return (
     <time dateTime={isoString}>
       {formatInTimeZone(new Date(isoString), "Asia/Tokyo", "yyyy年MM月dd日")}

@@ -10,7 +10,7 @@ export default function ListArticles({ articles }) {
         <ol className={styles.articles}>
           {articles.map((article) => (
             <li key={article.id}>
-              <Time dateString={article.dateString} />
+              <Time date={article.date} />
               <Link href={`/articles/${article.name}`}>
                 <a>{article.title}</a>
               </Link>

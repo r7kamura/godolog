@@ -14,7 +14,6 @@ Blog template to use Google Docs as article editor.
     - `GOOGLE_SERVICE_ACCOUNT`
     - `GOOGLE_WORKLOAD_IDENTITY_PROVIDER`
 
-
 I prepared a simple shell script that creates the necessary GCP resources for OIDC settings by using `cloud` command. Fill in some required variables and then run this script.
 
 - https://gist.github.com/r7kamura/59b0eff812c834aa5e34143adfba6b1e
