@@ -18,5 +18,15 @@ jobs:
           workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
       - uses: r7kamura/google-docs-to-github@v0
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           google_drive_folder_id: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+      - run: npm install
+      - run: npm run export
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out
