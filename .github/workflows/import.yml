@@ -12,6 +12,7 @@ jobs:
       contents: write
       id-token: write
     steps:
+      - uses: actions/checkout@v3
       - uses: google-github-actions/auth@v0
         with:
           service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
@@ -20,7 +21,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           google_drive_folder_id: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
-      - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
